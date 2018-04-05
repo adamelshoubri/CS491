@@ -1,0 +1,247 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600"); // Variables
+//@import "variables";
+// Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+$white: #fff;
+$black: #000;
+$whitesmoke: #f5f5f5;
+$theme-blue: #136AA9;
+$theme-secondary-blue: #4C8AB7;
+$theme-aqua: #0BB6A2;
+$theme-red: #B62927;
+$theme-yellow: #F5F50F;
+
+// TODO: Create ChartJs demos
+
+body {
+  letter-spacing: 1px;
+}
+
+.navbar {
+  background: $theme-blue !important;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn {
+    border-radius: 0;
+    letter-spacing: 1px;
+
+    &.btn-primary {
+      background: $theme-blue;
+      color: $white;
+
+      &:focus,
+      &:hover {
+        background: lighten($theme-blue, 5%);
+      }
+    }
+
+    &.btn-success {
+      background: $theme-aqua;
+      color: $white;
+
+      &:hover {
+        background: darken($theme-aqua, 5%);
+      }
+    }
+
+    &.btn-danger {
+      background: $theme-red;
+      color: $white;
+
+      &:focus,
+      &:hover {
+        background: darken($theme-red, 5%);
+      }
+    }
+
+    &.btn-warning {
+      background: $theme-yellow;
+      color: $theme-blue;
+    }
+
+    &.delete-question {
+      background: none;
+
+      &::before {
+        content: '\f00d';
+        font-family: FontAwesome;
+        display: block;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &.close {
+    color: $theme-red;
+    opacity: 1;
+    padding: 10px;
+
+    &::before {
+      content: '\f00d';
+      font-family: FontAwesome;
+      display: block;
+      font-size: 1rem;
+    }
+  }
+}
+
+.card-header {
+  &:focus,
+  &:hover {
+    cursor: move;
+  }
+}
+
+.chosen {
+  opacity: 1;
+
+  &.card {
+    .card-header {
+      background: darken($theme-blue, 20%);
+    }
+  }
+}
+
+.sortable-chosen {
+  opacity: 1;
+
+  .card-header {
+    background: darken($theme-blue, 5%);
+  }
+}
+
+.drag {
+  opacity: 1;
+
+  &.card {
+    .card-header {
+      background: darken($theme-blue, 20%);
+    }
+  }
+}
+
+.ghost {
+  opacity: 1;
+  border: 3px dashed $theme-aqua;
+}
+
+button {
+  outline: none;
+}
+
+#custom-question-content {
+  .input-group {
+    background: $whitesmoke;
+    // @extend .pt-1;
+    // @extend .pb-1;
+    @extend .mt-2;
+
+    input {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+button.collapse-handler {
+  background: none;
+  border: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background: none;
+  }
+
+  &::before {
+    content: '\f077';
+    font-family: FontAwesome;
+    display: block;
+  }
+
+  &.collapsed {
+    &::before {
+      content: '\f078';
+      font-family: FontAwesome;
+      display: block;
+    }
+  }
+}
+
+button.delete-question {
+  background: none;
+  border: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background: none;
+  }
+
+  &::before {
+    content: '\f00d';
+    font-family: FontAwesome;
+    display: block;
+  }
+}
+
+.card {
+  border-radius: 0;
+  transition: box-shadow 0.4s ease-in-out;
+
+  .card-header {
+    color: $white;
+    background: $theme-blue;
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: 0;
+    }
+
+    h6 {
+      padding: 7px 0;
+      font-weight: 400;
+    }
+  }
+
+  .btn {
+    padding: 0.5rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  span.question-type {
+    text-transform: capitalize;
+  }
+
+  span.question-text {}
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.input-group-addon {
+  background: $theme-secondary-blue;
+  color: $white;
+  border-radius: 0;
+}
